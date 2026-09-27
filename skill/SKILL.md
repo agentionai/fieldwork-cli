@@ -9,7 +9,7 @@ Use this skill when a user asks you to organize or report long-running research 
 
 ## Prerequisites and invocation
 
-You need Node.js 22+, the `@agentionai/fieldwork-cli` package installed on PATH, and access to a running compatible Fieldwork API server. The CLI package contains no server or web app and does not start either. Install it with `npm install --global @agentionai/fieldwork-cli@0.8.0`, or a local archive with `npm install --global ./agentionai-fieldwork-cli-0.8.0.tgz`. Installing from npm does not require pnpm or a checkout.
+You need Node.js 22+, the `@agentionai/fieldwork-cli` package installed on PATH, and access to a running compatible Fieldwork API server. The CLI package contains no server or web app and does not start either. Install it with `npm install --global @agentionai/fieldwork-cli@0.8.1`, or a local archive with `npm install --global ./agentionai-fieldwork-cli-0.8.1.tgz`. Installing from npm does not require pnpm or a checkout.
 
 ```sh
 fieldwork --help

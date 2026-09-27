@@ -17,7 +17,7 @@ export const entries: readonly ChangelogEntry[] = [
   {
     version: '0.8.1',
     date: '2026-09-27',
-    status: 'prepared',
+    status: 'published',
     changes: [
       {
         summary:

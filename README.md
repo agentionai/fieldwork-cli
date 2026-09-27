@@ -1,22 +1,22 @@
-# Agention Fieldwork CLI
+# Fieldwork Ledger CLI
 
-`@agentionai/fieldwork-cli` provides the `fieldwork` command for research bookkeeping against a Fieldwork API. It records goals, hypotheses, configuration, observations, and execution state; **it never launches or stops jobs**.
+`@agentionai/fieldwork-cli` provides the `fieldwork` command for [Fieldwork Ledger](https://fieldworkledger.com): a ledger of experiments for people and coding agents. It records goals, hypotheses, configuration, observations and execution state, so results stay comparable months later; **it never launches or stops jobs**, and it is not a log store.
+
+Open source under the [Apache License 2.0](https://github.com/agentionai/fieldwork-cli/blob/main/LICENSE). Source, issues and pull requests: [github.com/agentionai/fieldwork-cli](https://github.com/agentionai/fieldwork-cli).
 
 ## Install
 
-Requires Node.js **22+** and npm. Version **0.8.0** is published on npm:
+Requires Node.js **22+** and npm. The current version is **0.8.1**:
 
 ```sh
-npm install --global @agentionai/fieldwork-cli@0.8.0
+npm install --global @agentionai/fieldwork-cli
 fieldwork --version
 fieldwork --help
 ```
 
-A locally built archive installs the same way: `npm install --global ./agentionai-fieldwork-cli-0.8.0.tgz`.
+npm also holds 0.3.0 and 0.4.0, which predate credentials and paged responses and cannot use the hosted service; don't pin to those. A locally built archive installs the same way: `npm install --global ./agentionai-fieldwork-cli-0.8.1.tgz`.
 
-Pin the version. The npm registry currently holds 0.3.0 and 0.4.0, which predate credentials and paged responses and cannot use the hosted service, so an unpinned install gets a client that fails against it.
-
-A checkout and pnpm are not required to use the installed CLI. npm resolves Commander, its only runtime dependency. This package includes neither the server nor the web app and installs no services. By default it connects to the hosted service at `https://app.fieldworkledger.com`, which requires a credential; a local server is named with `--url` or `FIELDWORK_URL`. Installing a new client does not update server behavior.
+npm resolves Commander, the only runtime dependency. This package includes neither the server nor the web app and installs no services. By default it connects to the hosted service at `https://app.fieldworkledger.com`, which requires a credential; a local server is named with `--url` or `FIELDWORK_URL`. Installing a new client does not update server behavior; the server tells an older client when a newer release exists.
 
 ## Quick start
 
@@ -108,8 +108,19 @@ The default server is the hosted service; a local one needs `--url` or `FIELDWOR
 
 `fieldwork changelog [--since VERSION] [--release VERSION]` prints recent releases offline, marking per change whether it needs an updated API. The package carries recent releases only; `CHANGELOG.md` in the [source repository](https://github.com/agentionai/fieldwork-cli) is the full history. A newer client never upgrades a server, and the CLI cannot verify what an API provides.
 
-## License and source
+## Build from source
 
-Apache License 2.0; see [LICENSE](LICENSE). The source is at
-[github.com/agentionai/fieldwork-cli](https://github.com/agentionai/fieldwork-cli), where issues
-and pull requests are welcome; [CONTRIBUTING.md](CONTRIBUTING.md) explains how changes land.
+```sh
+git clone https://github.com/agentionai/fieldwork-cli.git
+cd fieldwork-cli
+npm install
+npm run build
+npm test
+npm link   # puts this build's `fieldwork` on PATH
+```
+
+The tests here cover what runs without a server. Commands are also tested against a running Fieldwork server where the CLI is developed; [CONTRIBUTING.md](https://github.com/agentionai/fieldwork-cli/blob/main/CONTRIBUTING.md) explains how a change lands.
+
+## License
+
+Apache License 2.0; see [LICENSE](https://github.com/agentionai/fieldwork-cli/blob/main/LICENSE) and [NOTICE](https://github.com/agentionai/fieldwork-cli/blob/main/NOTICE).

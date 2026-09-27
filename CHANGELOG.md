@@ -4,7 +4,7 @@ Complete history for `@agentionai/fieldwork-cli`. The package itself carries onl
 
 "Requires an updated API" means the change depends on server behaviour from the corresponding source baseline. There is no compatibility handshake: installing a newer client never upgrades a server, and the CLI cannot verify what an API provides.
 
-## 0.8.1 — 2026-09-27 (prepared, not published)
+## 0.8.1 — 2026-09-27 (published to npm 2026-09-27)
 
 Client only:
 
