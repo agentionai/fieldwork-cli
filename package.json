@@ -1,0 +1,50 @@
+{
+  "name": "@agentionai/fieldwork-cli",
+  "version": "0.8.1",
+  "description": "Agention Fieldwork CLI for research campaigns, experiments and run records",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/agentionai/fieldwork-cli#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agentionai/fieldwork-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agentionai/fieldwork-cli/issues"
+  },
+  "files": [
+    "dist/main.js",
+    "dist/client.js",
+    "dist/credentials.js",
+    "dist/workspace.js",
+    "dist/select.js",
+    "dist/changelog.js",
+    "dist/version.js",
+    "dist/fieldwork-skill.md",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "bin": {
+    "fieldwork": "dist/main.js"
+  },
+  "dependencies": {
+    "commander": "^13.1.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-skill.mjs",
+    "prepack": "npm run build",
+    "test": "vitest run",
+    "dev": "tsx src/main.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
